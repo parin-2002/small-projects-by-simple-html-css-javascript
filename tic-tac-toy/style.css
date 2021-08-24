@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --box-size: 100px;
+  --mark-size: calc(var(--box-size) * 0.9);
+}
+body {
+  margin: 0;
+  background: lightgreen;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.box {
+  width: var(--box-size);
+  height: var(--box-size);
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 20px 20px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.box:first-child,
+.box:nth-child(2),
+.box:nth-child(3) {
+  border-top: none;
+}
+
+.box:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.box:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.box:last-child,
+.box:nth-child(8),
+.box:nth-child(7) {
+  border-bottom: none;
+}
+
+.box.x,
+.box.o {
+  cursor: not-allowed;
+}
+
+.box.x::before,
+.box.x::after,
+.main.x .box:not(.x):not(.o):hover::before,
+.main.x .box:not(.x):not(.o):hover::after {
+  position: absolute;
+  content: "";
+  width: calc(var(--mark-size) * 0.07);
+  height: var(--mark-size);
+  background-color: black;
+}
+
+.main.x .box:not(.x):not(.o):hover::before,
+.main.x .box:not(.x):not(.o):hover::after {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.box.x::before,
+.main.x .box:not(.x):not(.o):hover::before {
+  transform: rotate(45deg);
+}
+
+.box.x::after,
+.main.x .box:not(.x):not(.o):hover::after {
+  transform: rotate(-45deg);
+}
+
+.box.o::before,
+.box.o::after,
+.main.o .box:not(.x):not(.o):hover::after,
+.main.o .box:not(.x):not(.o):hover::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+
+.box.o::before,
+.main.o .box:not(.x):not(.o):hover::before {
+  width: calc(var(--mark-size) * 0.85);
+  height: calc(var(--mark-size) * 0.85);
+  background: lightgreen;
+}
+
+.box.o::after,
+.main.o .box:not(.x):not(.o):hover::after {
+  width: calc(var(--mark-size) * 1);
+  height: var(--mark-size);
+  background: black;
+  z-index: -1;
+}
+
+.main.o .box:not(.x):not(.o):hover::after {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+.win-msg {
+  display: block;
+  position: absolute;
+  display: flex;
+  top: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0, 0.3);
+  flex-direction: column;
+  z-index: 999;
+  display: none;
+}
+.win-msg div[data-win] {
+  font-size: 2.5rem;
+  color: white;
+}
+.win-msg button {
+  width: 90px;
+  height: 50px;
+  font-size: 1.3em;
+  background: lightgreen;
+  border: none;
+  border-radius: 5px;
+}
+.win-msg button:hover {
+  background-color: black;
+  color: white;
+}
+
+.show-msg {
+  display: block;
+  display: flex;
+}
