@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+  margin: 10px;
+}
+header div p {
+  font-size: 2em;
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  width: 65%;
+  font-size: 14px;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  outline: none;
+}
+.contain {
+  margin: auto;
+  width: 80%;
+}
+.contain section {
+  margin: 15px;
+}
+
+.contain section p a {
+  font-size: 1.5em;
+  margin-bottom: 2px;
+}

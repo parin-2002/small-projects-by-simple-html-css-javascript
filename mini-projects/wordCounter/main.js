@@ -20,6 +20,8 @@ class wordCounter {
 
   show(result) {
     let event = new CustomEvent("result", {
+      bubbles: true,
+      cancelable: true,
       detail: result,
     });
 
