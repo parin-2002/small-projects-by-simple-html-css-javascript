@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+div.loading {
+  position: absolute;
+  display: flex;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 9999999;
+}
+div.loading img {
+  width: 100%;
+}
+
+i:hover {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 999999;
+}
+header nav {
+  position: relative;
+  background: #ffffff;
+  justify-content: space-between;
+  display: flex;
+  margin: auto;
+  margin-top: 25px;
+  width: 90%;
+  height: 50px;
+  border-top: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1), -3px -5px 5px rgb(0, 0, 0, 0.1);
+}
+
+nav div.logo a span {
+  color: red;
+  font-size: 1.3em;
+  font-family: cursive;
+}
+
+nav div.logo a {
+  line-height: 50px;
+  margin: 0px 15px;
+  font-size: 1.3em;
+}
+
+nav div.search {
+  display: flex;
+  align-items: center;
+}
+
+nav div.search div {
+  max-width: 300px;
+  display: flex;
+  border: 1px solid black;
+}
+
+nav div.search input {
+  all: unset;
+}
+
+nav div.search select {
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  background: white;
+  margin: 5px;
+  width: 100px;
+}
+
+nav div.search input[type="text"] {
+  background-image: url("http://simpleicon.com/wp-content/uploads/active-search.svg");
+  background-size: contain;
+  background-position: right;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+nav div.nav-items {
+  line-height: 50px;
+}
+
+nav div.nav-items ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav div.nav-items li {
+  margin: 0px 15px;
+  font-size: 1.2em;
+}
+nav div.nav-items li:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+li.profile {
+  width: 35px;
+  height: 35px;
+  background: red;
+  border-radius: 50%;
+  align-self: center;
+}
+
+li.search {
+  display: none;
+}
+
+section {
+  margin-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  z-index: -9999;
+}
+
+section div.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  position: relative;
+  padding: 5px;
+  margin: 10px;
+  margin-top: 18px;
+  transition: transform 0.5s;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1), -3px -3px 5px rgb(0, 0, 0, 0.1);
+}
+
+section div.card div div {
+  display: flex;
+  margin-top: 3px;
+}
+
+section div.card div div p {
+  margin-left: 5px;
+}
+
+section div.card:hover {
+  transform: scale(1.05);
+}
+
+.add-card {
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  right: 15px;
+  top: 10px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+div.card img {
+  width: 100%;
+}
+
+.add-card i {
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+}
+
+.add-card:hover {
+  background-color: red;
+}
+
+dialog {
+  margin: auto;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.1), -3px -3px 5px rgb(0, 0, 0, 0.1);
+}
+
+dialog div.main {
+  position: relative;
+  max-width: 500px;
+}
+
+dialog .pro_img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+dialog img {
+  display: flex;
+  width: 150px;
+}
+
+dialog .detail {
+  display: flex;
+  margin-top: 5px;
+}
+
+dialog .detail p {
+  margin-left: 10px;
+}
+
+dialog .close-dialog {
+  position: absolute;
+  top: 5px;
+  font-size: 1.2em;
+}
+
+@media (max-width: 380px) {
+  section div.card {
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  header nav {
+    width: 100vw;
+    margin-top: 0px;
+  }
+
+  nav div.search {
+    position: absolute;
+    bottom: -32px;
+    display: none;
+  }
+  li.search {
+    display: block;
+  }
+  nav div.nav-items li {
+    margin: 0px 5px;
+    font-size: 16px;
+  }
+  .show-search {
+    width: 100%;
+    background: white;
+    display: block !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  section div.card {
+    width: 170px;
+  }
+}
