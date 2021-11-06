@@ -142,5 +142,7 @@ function addCard(event, id) {
   });
 
   getCategories();
+  showLoader();
   getProcducts();
+  hideLoader();
 })();
