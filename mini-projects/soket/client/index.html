@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .msgbox {
+        background-color: aqua;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Group discusion room</h1>
+    <div class="msgbox">
+      <ul>
+        <li>You can see All msg here</li>
+      </ul>
+      <div>
+        <input type="text" id="msg" />
+        <button id="btn">send</button>
+      </div>
+    </div>
+    <script
+      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
